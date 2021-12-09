@@ -85,9 +85,11 @@ public class TestConfig implements CommandLineRunner {
 		f2.getTelefones().addAll(Arrays.asList("61999852515", "61985586563"));
 		
 		Vales v1 = new Vales(null, "Almoço", new Date(), 50.00, f2);
+		Vales v2 = new Vales(null, "Almoço", new Date(), 30.00, f1);
+		Vales v3 = new Vales(null, "Almoço", new Date(), 10.00, f1);
 		
 		funcionarioRepository.saveAll(Arrays.asList(f1, f2));
-		valeRepository.saveAll(Arrays.asList(v1));
+		valeRepository.saveAll(Arrays.asList(v1, v2, v3));
 		
 		Cliente cli1 = new Cliente(null, "cliente1@gmail.com", "José Carlos", "00100658598");
 		cli1.getTelefones().addAll(Arrays.asList("6185856525", "6185788547"));

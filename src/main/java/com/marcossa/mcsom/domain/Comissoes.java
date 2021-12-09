@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Comissoes implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -24,6 +26,7 @@ public class Comissoes implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "servico_id")
 	@MapsId
+	@JsonIgnore
 	private Servico servico;
 	
 	@ManyToOne

@@ -15,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Funcionario implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -31,10 +33,12 @@ public class Funcionario implements Serializable {
 	@CollectionTable(name="TEL_FUNCIONARIOS")
 	private Set<String> telefones = new HashSet<>();
 	
-	@OneToMany(mappedBy = "funcionarios")
+	@OneToMany(mappedBy = "funcionario")
+	@JsonIgnore
 	private List<Vales> vales = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "funcionario")
+	@JsonIgnore
 	private List<Comissoes> comissoes = new ArrayList<>();
 	
 	public Funcionario() {

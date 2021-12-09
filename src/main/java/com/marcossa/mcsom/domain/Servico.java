@@ -32,7 +32,6 @@ public class Servico implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
-	@JsonIgnore
 	private Cliente cliente;
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "servico")

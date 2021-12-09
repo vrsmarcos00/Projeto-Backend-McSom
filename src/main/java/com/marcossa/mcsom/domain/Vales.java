@@ -23,19 +23,19 @@ public class Vales implements Serializable {
 	private Double valor;
 	
 	@ManyToOne
-	@JoinColumn(name="funcionario_id")
-	private Funcionario funcionarios;
+	@JoinColumn(name = "funcionario_id")
+	private Funcionario funcionario;
 	
 	public Vales() {
 	}
 
-	public Vales(Integer id, String descricao, Date data, Double valor, Funcionario funcionarios) {
+	public Vales(Integer id, String descricao, Date data, Double valor, Funcionario funcionario) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
 		this.data = data;
 		this.valor = valor;
-		this.funcionarios = funcionarios;
+		this.funcionario = funcionario;
 	}
 
 	public Integer getId() {
@@ -73,6 +73,14 @@ public class Vales implements Serializable {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionarios(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
 
 	@Override
